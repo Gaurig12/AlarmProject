@@ -6,13 +6,11 @@ import { AlarmComponent } from './read/read.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { FormsModule } from '@angular/forms';
-import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AlarmComponent,
-    MatConfirmDialogComponent
+    AlarmComponent
   ],
   imports: [
     BrowserModule,

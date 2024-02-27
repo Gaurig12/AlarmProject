@@ -4,16 +4,24 @@
         <div class="row">
             <div class="column1" style="background-color:#f7f4f4;">
 
-                <h5 class="recent"> Sort by Recent</h5>
+                <h5 class="recent"> Sort by Recent
+                    <img class="imgrecent" src="assets/greyarrow.png">
+                </h5>
                 <h2 style="margin-bottom: 2rem;">My Alarms</h2>
 
-                <h5 style="margin-top: -10px;">Filter</h5>
+
+                <h5 style="margin-top: -10px;">Filter
+                    <img class="imgfilter" src="assets/greyarrow.png">
+
+                </h5>
+
+
 
 
                 <li *ngFor="let alarm of alarms">
                     <div (click)="editAlarm(alarm)" class="button-table">
                         <div class="button-cell">
-                            <div class="button-index">P1</div>
+                            <div class="button-index">{{alarm.priority}}</div>
                             <div class="button-info">
 
                                 <h2 class="button-name">{{ alarm.name }}</h2>
@@ -30,15 +38,26 @@
                 <h2 *ngFor="let alarm of alarms">
                     <div *ngIf="alarm === selectedAlarm" style="margin-left: 15px;">
                         {{ alarm.name }}
+
+                        <sup class="red-superscript">Issue</sup>
                     </div>
+
                 </h2>
+                <div class="button-container">
+                    <button class="rectangular-button">
+                         <img class="imgboxshare" src="data:image/png;base64,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"> Share</button>
+                    <button class="squarish-button">
+<img class="imgboxarrow" src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/arrow-down-icon.png">
+
+                    </button>
+                </div>
                 <h5 style="margin-top: -17px; margin-left: 17px;">Downhole PT Tubing</h5>
                 <div class="row">
                     <div class="column1" style=" width: 70%; height: 710px;">
                         <div class="comp1" style="background-color:#fff3ff; margin-left: 10px;   margin-bottom: 20px; padding-left: 50px;">
                             <div class="header">
                                 <img class="img2" src="https://static-00.iconduck.com/assets.00/arrow-right-circle-icon-512x512-2p1e2aaw.png">
-                                <h2 style="margin-left: 15px; font-size: 18px;"> Review and acknowledge the issue</h2>
+                                <h2 style="margin-left: 15px; font-size: 18px;"> Review and acknowledge the issue </h2>
 
                                 <p class="subtitle" style="margin-left: 25px;">04/26/2022</p>
 

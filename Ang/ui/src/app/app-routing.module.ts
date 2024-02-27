@@ -4,7 +4,7 @@ import { AlarmComponent } from './read/read.component';
 
 
 const routes: Routes = [
-  {path: 'dead', component: AlarmComponent},
+  {path: 'read', component: AlarmComponent},
 ] 
 
 @NgModule({
