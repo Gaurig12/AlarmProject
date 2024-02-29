@@ -8,7 +8,7 @@ const pool = new Pool({
     port: 5432
 });
 
-pool.on('connect', (err) => {
+/*  pool.on('connect', (err) => {
     if(err){
         console.error('connection error', err.stack)
     }
@@ -16,10 +16,10 @@ pool.on('connect', (err) => {
         console.log('Connected the db')
     }
 })
-
-/* pool.on('connect', () => {
+*/
+pool.on('connect', () => {
     console.log('Connected');
 });
-*/
+
 
 module.exports = pool;
