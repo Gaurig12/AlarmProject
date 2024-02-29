@@ -1,6 +1,8 @@
 // dao.js
 const { Alarm } = require('../model/model');
+
 const pool = require('../config/db.config');
+const { ALARM_NOT_FOUND } = require('../constant/message');
 
 // DAO function to get all alarms
 exports.getAllAlarmsQuery = async() => {
@@ -15,16 +17,15 @@ exports.getAllAlarmsQuery = async() => {
 // DAO function to get an alarm by ID
 exports.getAlarmByIdQuery = async(id) => {
     try {
-        const { rows } = await pool.query('SELECT * FROM "Alarmdetails" WHERE id = $1', [id]);
+        const { rows } = await pool.query('SELECT * FROM "Alarmdetails" WHERE id = $1 ORDER BY id ASC ', [id]);
         if (rows.length === 0) {
-            throw new Error('Alarm not found');
+            throw new Error(ALARM_NOT_FOUND);
         }
         return rows[0];
     } catch (error) {
         throw new Error(error.message);
     }
 };
-
 
 // DAO function to create a new alarm
 exports.createAlarmQuery = async(alarmData) => {
