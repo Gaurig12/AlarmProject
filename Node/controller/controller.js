@@ -1,7 +1,8 @@
 // // controller.js
 
 const service = require('../service/service');
-const { STATUS_CODES, MESSAGES } = require('../constant/constant');
+const constants = require('../constant/constant');
+const { STATUS_CODES, MESSAGES } = constants;
 
 exports.getAllAlarms = async(req, res) => {
     try {
