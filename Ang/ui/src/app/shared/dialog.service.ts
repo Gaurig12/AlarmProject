@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+
+/* import { Injectable } from '@angular/core';
 import { MatConfirmDialogComponent } from '../mat-confirm-dialog/mat-confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -22,3 +23,4 @@ export class DialogService {
     });
   }
 }
+*/
