@@ -91,7 +91,7 @@
                 <h5 style="margin-top: -17px; margin-left: 17px;">Downhole PT Tubing</h5>
                 <div class="row">
                     <div class="column1" style=" width: 70%; height: 710px;">
-                        <div class="comp1" style="background-color:#fff3ff; margin-left: 10px;   margin-bottom: 20px; padding-left: 50px;">
+                        <div class="comp1" style="background-color:#F3f3f3; margin-left: 10px;   margin-bottom: 20px; padding-left: 50px;">
                             <div class="header">
                                 <img class="img2" src="https://static-00.iconduck.com/assets.00/arrow-right-circle-icon-512x512-2p1e2aaw.png">
                                 <h2 style="margin-left: 15px; font-size: 18px; margin-right: 10px;"> Review and acknowledge the issue </h2>
@@ -103,7 +103,8 @@
                             <p class="text"> A decrease in pressure required to inject into the resevior was found, falling below the expected range.
                             </p>
 
-                            <span class="dot"></span>
+                            <span class="dot"> 
+                            </span>
                             <div class="comp3">
 
                                 <div class="lefttext">Using the table below, please review and acknowledge the issue.<br> Clicking '<b>Acknowledge</b>' will notify responsible and impacted parties. <br> Clicking '<b>Snooze</b>' will notify you again of the same alert in the
@@ -232,7 +233,7 @@
                                 <div class="modal-content">
                                     <div class="overlay" *ngIf="showEditForm"></div>
                                     <div class="edit-form" *ngIf="showEditForm">
-                                        <h2>Edit Alarm</h2>
+                                        <h2 class="edittitle">Edit Alarm</h2>
                                         <form (ngSubmit)="submitEditForm(); resetForm()" #editForm="ngForm" class="edit-form-container">
                                             <div class="form-group">
                                                 <label for="level">Level:</label>

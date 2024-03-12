@@ -328,9 +328,10 @@ li {
 
 .edit-form-container {
     background-color: #f2f2f2;
-    padding: 10px;
+    padding: 2px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 290px;
 }
 
 .form-group {
@@ -341,6 +342,8 @@ li {
     display: block;
     font-weight: bold;
     font-size: 15px;
+    text-align: left;
+    padding-bottom: 3px;
 }
 
 .form-group input {
@@ -349,6 +352,7 @@ li {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    text-align: left;
 }
 
 .button-group {
@@ -372,14 +376,17 @@ li {
     /* Default color for primary button */
     color: #adbdb9;
     border-style: solid;
-    border-color: #147d64;
-    border-width: 0.05px;
+    border-color: #656a6a;
+    border-width: 0.1px;
     font-weight: bold;
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
 .btn.btn.active {
     background-color: #147d64;
     color: #fcfcfc;
+    cursor: default;
     /* Color for active state */
 }
 
@@ -416,13 +423,13 @@ li {
 }
 
 .btn-primary-delete {
-    background-color: #147d64;
+    background-color: #e12d39;
     color: #fff;
     font-weight: bold;
 }
 
 .btn-primary-delete:hover {
-    background-color: #116b56;
+    background-color: #cf2333;
     color: #fff;
 }
 
@@ -632,6 +639,17 @@ table.table2 tr:nth-child(even) {
     margin-bottom: 0.5em;
 }
 
+h2.edittitle {
+    display: block;
+    font-size: 1.25em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    padding-bottom: 17px;
+}
+
 .button4 {
     background-color: #eee;
     position: sticky;
@@ -655,6 +673,8 @@ table.table2 tr:nth-child(even) {
     ;
     margin-bottom: -50px;
     display: inline-block;
+    background-image: url('../Dot.png');
+    background-size: cover;
 }
 
 .red-underline {
@@ -895,25 +915,13 @@ hr {
 
 .form-group select {
     width: 100%;
-    /* Set the width to fill the container */
     padding: 8px;
-    /* Add padding for better appearance */
     font-size: 16px;
-    /* Set font size */
     border: 1px solid #ccc;
-    /* Add a border */
     border-radius: 4px;
-    /* Add border radius */
     box-sizing: border-box;
-    /* Ensure the select box includes padding and border in its total width */
-}
-
-
-/* Style for the dropdown options */
-
-.form-group select option {
-    padding: 8px;
-    /* Add padding for better appearance */
+    position: relative;
+    /* Set position relative for the select container */
 }
 
 
@@ -924,45 +932,19 @@ hr {
     /* Unicode character for a down arrow */
     position: absolute;
     /* Position the arrow */
-    top: 30%;
-    /* Adjust vertical position */
-    right: 10px;
-    /* Adjust horizontal position */
+    top: 50%;
+    /* Adjust vertical position to center vertically */
+    right: 20px;
+    /* Adjust horizontal position from the right */
+    transform: translateY(-50%);
+    /* Center the arrow vertically */
+    margin-left: -20px;
+    /* Move the arrow more to the left */
 }
 
-
-/* Style for the dropdown when it's focused */
-
-.form-group select:focus {
-    outline: none;
-    /* Remove default focus styling */
-    border-color: #007bff;
-    /* Change border color when focused */
-}
-
-.form-group select {
-    width: 100%;
-    padding: 8px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.form-group select option {
-    padding: 8px;
-}
-
-.form-group select:after {
-    content: '\25BC';
-    position: absolute;
-    top: 30%;
-    right: 10px;
-}
-
-.form-group select:focus {
-    outline: none;
-    border-color: #007bff;
+.form-group select:focus+select:after {
+    color: #007bff;
+    /* Change color when focused */
 }
 
 .overlay {
