@@ -1,389 +1,3 @@
-/* * {
-    box-sizing: border-box;
-}
-
-.column1 {
-    color: rgb(0, 1, 2);
-    float: left;
-    width: 23%;
-    padding: 10px;
-    height: 1100px;
-}
-
-.column2 {
-    float: left;
-    width: 77%;
-    padding: 10px;
-    height: 1100px;
-}
-
-.comp1 {
-    float: left;
-    width: 100%;
-    padding: 5px;
-    height: 55%;
-}
-
-.comp2 {
-    float: left;
-    width: 100%;
-    padding: 20px;
-    height: 25%;
-}
-
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-    height: 100%;
-}
-
-img {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 150px;
-}
-
-.button {
-    border: none;
-    color: white;
-    padding: 10px 50px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 2px 2px;
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-
-.button1 {
-    width: 47%;
-    color: rgb(0, 0, 0);
-    border: 1px solid #c7ccce99;
-}
-
-.button1:hover {
-    background-color: #ffffff;
-    color: rgb(17, 0, 0);
-}
-
-.button2 {
-    width: 47%;
-    color: rgb(0, 0, 0);
-    border: 1px solid #c7ccce99;
-}
-
-.button2:hover {
-    background-color: #ffffff;
-    color: rgb(17, 0, 0);
-}
-
-.button3 {
-    height: 50px;
-    width: 100%;
-    color: rgb(0, 0, 0);
-    border: 1px solid #c7ccce99;
-}
-
-.button3:hover {
-    background-color: #f0f801;
-    color: rgb(17, 0, 0);
-}
-
-button.truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.button-text {
-    display: flex;
-    align-items: center;
-}
-
-.button-index {
-    font-size: 11px;
-    margin-right: 5px;
-    position: left;
-    position: absolute;
-    left: 45px;
-}
-
-.button-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.button-name {
-    font-size: 12px;
-    margin: 0;
-    margin-left: 46px;
-}
-
-.button-subheading {
-    font-size: 9px;
-    margin-left: 46px;
-}
-
-.button-time {
-    font-size: 10px;
-    margin-left: 240px;
-}
-
-.topright {
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    font-size: 18px;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td {
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #cccccc;
-}
-
-p {
-    text-align: left;
-    font-weight: bold;
-    line-height: 3px;
-}
-
-li {
-    list-style: none;
-}
-
-.plain-text {
-    font-weight: normal;
-}
-
-tr:hover {
-    background-color: rgb(139, 212, 149);
-}
-
-.button-table {
-    display: flex;
-    flex-direction: column;
-}
-
-.button-cell {
-    padding: 6px;
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-}
-
-.button-cell:hover {
-    background-color: #99eb4d;
-}
-
-.edit-btn,
-.delete-btn {
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.edit-btn:hover,
-.delete-btn:hover {
-  background-color: #45a049; 
-}
-
-.edit-btn span,
-.delete-btn span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.edit-btn span:after,
-.delete-btn span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.edit-btn:hover span,
-.delete-btn:hover span {
-  padding-right: 25px;
-}
-
-.edit-btn:hover span:after,
-.delete-btn:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-.edit-form-container {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.button-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary {
-    background-color: #a7ee65;
-    color: #fff;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    color: #fff;
-}
-
-body {
-    font-family: Arial, sans-serif; 
-    color: #333; 
-}
-
-h2 {
-    font-size: 24px; 
-    color: #0066cc; 
-}
-
-h5 {
-    font-size: 18px; 
-    color: #009933;
-}
-
-.button-name {
-    font-size: 20px; 
-    font-weight: bold; 
-    color: #ee0083; 
-}
-
-.button-subheading {
-    font-size: 14px; 
-    color: #666; 
-}
-
-.plain-text {
-    font-size: 16px; 
-    color: #000; 
-}
-
-.edit-btn,
-.delete-btn {
-    background-color: #ee0093; 
-    color: #fff; 
-    border: none; 
-    padding: 10px 20px; 
-    font-size: 16px; 
-    cursor: pointer;  
-    margin-right: 10px; 
-}
-
-.edit-btn:hover,
-.delete-btn:hover {
-    background-color: #48ff00; 
-}
-
-form {
-    font-family: Arial, sans-serif; 
-}
-
-
-input[type="text"],
-textarea {
-    font-size: 16px; 
-    padding: 8px; 
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button[type="submit"] {
-    background-color: #4caf50; 
-    color: white; 
-    padding: 10px 20px; 
-    border: none;
-    border-radius: 4px; 
-    cursor: pointer; 
-}
-
-
-button[type="submit"]:hover {
-    background-color: #45a049; 
-}
-
-
-.modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.modal-content {
-    text-align: center;
-}
-
-.modal-content p {
-    margin-bottom: 20px;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-}
-
-.button-group button {
-    margin: 0 10px;
-} */
-
 * {
     box-sizing: border-box;
     font-family: Arial
@@ -406,6 +20,18 @@ button[type="submit"]:hover {
     width: 77%;
     padding: 10px;
     height: 820px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column3 {
+    color: rgb(0, 1, 2);
+    float: left;
+    width: 23%;
+    padding: 10px;
+    height: 820px;
+    width: 28%;
+    height: 750px;
+    margin-left: 10px;
     /* Should be removed. Only for demonstration */
 }
 
@@ -741,24 +367,82 @@ li {
     cursor: pointer;
 }
 
-.btn-primary {
-    background-color: #e60202;
-    color: #fff;
+.btn.btn-primary {
+    background-color: #ebefee;
+    /* Default color for primary button */
+    color: #adbdb9;
+    border-style: solid;
+    border-color: #147d64;
+    border-width: 0.05px;
+    font-weight: bold;
 }
 
-.btn-primary:hover {
-    background-color: #b00404;
-    color: #fff;
+.btn.btn.active {
+    background-color: #147d64;
+    color: #fcfcfc;
+    /* Color for active state */
 }
+
+.btn.btn.active:hover {
+    background-color: #656a6a;
+    /* Color for active state */
+}
+
+.btn.btn-primary:hover {
+    background-color: #ebefee;
+    /* Hover color for primary button */
+}
+
+
+/* Additional Styling for Buttons */
 
 .btn-secondary {
-    background-color: #cbcbcb;
-    color: #fff;
+    background-color: rgba(255, 255, 255, 0);
+    ;
+    color: #000000;
+    border-style: solid;
+    border-color: #656a6a;
+    border-width: 0.1px;
+    font-weight: bold;
 }
 
 .btn-secondary:hover {
-    background-color: #9b9292;
+    background-color: rgba(208, 137, 137, 0);
+    ;
+    color: #000000;
+    border-style: solid;
+    border-color: #656a6a;
+    border-width: 0.1px;
+}
+
+.btn-primary-delete {
+    background-color: #147d64;
     color: #fff;
+    font-weight: bold;
+}
+
+.btn-primary-delete:hover {
+    background-color: #116b56;
+    color: #fff;
+}
+
+.btn-secondary-delete {
+    background-color: rgba(255, 255, 255, 0);
+    ;
+    color: #000000;
+    border-style: solid;
+    border-color: #656a6a;
+    border-width: 0.1px;
+    font-weight: bold;
+}
+
+.btn-secondary-delete:hover {
+    background-color: rgba(208, 137, 137, 0);
+    ;
+    color: #000000;
+    border-style: solid;
+    border-color: #656a6a;
+    border-width: 0.1px;
 }
 
 body {
@@ -796,7 +480,7 @@ textarea {
 }
 
 button[type="submit"] {
-    background-color: #4caf50;
+    background-color: #147d64;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -805,7 +489,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #116b56;
 }
 
 * {
@@ -1004,7 +688,7 @@ table.table2 tr:nth-child(even) {
     border-radius: 5px;
     margin-right: 10px;
     border-radius: 3px;
-    border-color: #e2e2e2;
+    border-color: #D0D0D0;
     border-style: solid;
     border-width: 1px;
     margin-top: 16px;
@@ -1092,12 +776,12 @@ hr {
     border-radius: 16px;
     border-width: 1px;
     color: red;
-    font-size: 10px;
-    width: 55px;
-    height: 16px;
-    padding: 5px;
-    padding-left: 12px;
-    padding-right: 12px;
+    font-size: 9px;
+    width: 45px;
+    height: 14px;
+    padding: 3px;
+    padding-left: 9px;
+    padding-right: 9px;
     font-weight: bold;
     letter-spacing: 0px;
 }
@@ -1254,4 +938,662 @@ hr {
     /* Remove default focus styling */
     border-color: #007bff;
     /* Change border color when focused */
+}
+
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group select option {
+    padding: 8px;
+}
+
+.form-group select:after {
+    content: '\25BC';
+    position: absolute;
+    top: 30%;
+    right: 10px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    pointer-events: auto;
+}
+
+.edit-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+@media only screen and (max-width:800px) {
+    .column3 {
+        color: rgb(0, 1, 2);
+        float: left;
+        width: 23%;
+        padding: 10px;
+        height: 820px;
+        width: 103%;
+        height: 750px;
+        margin-left: 10px;
+        margin-top: 20px;
+        /* Should be removed. Only for demonstration */
+    }
+    .comp1 {
+        float: left;
+        width: 150%;
+        padding: 5px;
+        height: 66%;
+        margin-left: 80px;
+        border-style: solid;
+        border-color: rgba(152, 152, 152, 0.225);
+        border-width: 2px;
+        border-radius: 4px;
+    }
+    .lefttext {
+        text-align: left;
+        margin-left: 7%;
+        line-height: 2.2;
+        font-size: 10.3px;
+        margin-left: 17px;
+    }
+    .dot {
+        height: 50px;
+        width: 50px;
+        background-color: #ffffff;
+        border-color: #eeff00;
+        border-style: solid;
+        border-radius: 50%;
+        ;
+        margin-bottom: -30px;
+        display: inline-block;
+        margin-left: -6%;
+    }
+    table.table2 {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin-left: 1%;
+        table-layout: fixed;
+        font-size: 12px;
+        margin-right: 1%;
+    }
+    table.table2 th,
+    table.table2 td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        width: 17%;
+    }
+    table.table2 th {
+        background-color: #f1f1f1;
+    }
+    table.table2 td {
+        background-color: #eee;
+        font-size: 10px;
+        text-align: left;
+        height: 15px;
+    }
+    table.table2 tr {
+        width: 8px;
+    }
+    table.table2 tr:nth-child(even) {
+        background-color: #f3f3f3;
+    }
+    .comp3 {
+        width: 94%;
+        padding-top: 0px;
+        height: 23%;
+        margin-top: -5px;
+        margin-left: 3%;
+        background-color: #b3ff001d;
+        border: 2px rgb(212, 255, 0);
+        border-style: solid;
+        border-radius: 7px;
+    }
+    .subtitle {
+        color: gray;
+        font-weight: normal;
+        font-size: 0.6rem;
+        margin-bottom: 25px;
+        margin-top: -5px;
+    }
+    .img2 {
+        width: 15px;
+        float: left;
+        margin-left: -35px;
+        margin-top: 2px;
+    }
+    .header h2 {
+        font-size: 10px;
+        margin-bottom: 0.5em;
+        margin-left: 55px;
+        font-size: 18px;
+    }
+    .column1 {
+        color: rgb(0, 1, 2);
+        float: left;
+        width: 33%;
+        padding: 10px;
+        height: 1270px;
+        /* Should be removed. Only for demonstration */
+    }
+    .column2 {
+        float: left;
+        width: 67%;
+        padding: 10px;
+        height: 820px;
+        /* Should be removed. Only for demonstration */
+    }
+    .snooze {
+        background-color: rgb(255, 255, 255);
+        border: none;
+        padding: 12px 32px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        float: right;
+        margin-top: 7px;
+        padding-right: -10px;
+        color: #000000;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        margin-right: 10px;
+        border-radius: 3px;
+        border-color: #D0D0D0;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 16px;
+    }
+    .acknowledge {
+        background-color: #f00;
+        border: none;
+        padding: 12px 32px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        float: right;
+        margin-top: 7px;
+        padding-right: -10px;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 3px;
+        border-color: #e2e2e2;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 16px;
+        margin-right: 1rem;
+    }
+    .hr-2 {
+        display: block;
+        unicode-bidi: isolate;
+        margin-block-start: 0.5em;
+        margin-block-end: 1rem;
+        margin-inline-start: auto;
+        margin-inline-end: 5rem;
+        overflow: hidden;
+        border-style: inset;
+        border-width: 0.3px;
+        color: #e8e8e8;
+        border-top: 0.3px solid #e8e8e8;
+        border-bottom: 0.3px solid #e8e8e8;
+    }
+    .comp2 {
+        float: left;
+        width: 150%;
+        padding: 20px;
+        height: 50%;
+        border-style: solid;
+        border-color: rgba(152, 152, 152, 0.225);
+        border-width: 2px;
+        border-radius: 6px;
+    }
+    .text {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: normal;
+        margin-top: -15px;
+        padding-right: 20px;
+        flex: 1;
+        margin-left: 0.5rem
+    }
+    .text {
+        font-size: 11px;
+        line-height: 18px;
+        font-weight: normal;
+        margin-top: -15px;
+        padding-right: 5px;
+        flex: 1;
+        margin-left: 0.5rem
+    }
+    .redtext {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: normal;
+        margin-top: -15px;
+        padding-right: 20px;
+        color: red;
+        flex: 1;
+    }
+    .button-table {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .button-cell {
+        padding: 14px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+    .button-cell:hover {
+        background-color: #FFD800;
+    }
+    .button-time {
+        font-size: 9px;
+        color: #505050;
+        font-weight: normal;
+        float: right;
+        margin-top: -16px;
+        margin-right: 2px;
+        font-size: 10px;
+        margin-left: 170px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .column3 {
+        color: rgb(0, 1, 2);
+        float: left;
+        width: 23%;
+        padding: 10px;
+        height: 820px;
+        width: 103%;
+        height: 750px;
+        margin-left: 10px;
+        margin-top: 20px;
+        /* Should be removed. Only for demonstration */
+    }
+    .comp1 {
+        float: left;
+        width: 170%;
+        margin-left: -10px;
+        height: 66%;
+        margin-left: 7px;
+        border-style: solid;
+        border-color: rgba(152, 152, 152, 0.225);
+        border-width: 2px;
+        border-radius: 4px;
+    }
+    .lefttext {
+        text-align: left;
+        margin-left: 7%;
+        line-height: 2.2;
+        font-size: 10.3px;
+        margin-left: 17px;
+    }
+    .dot {
+        height: 50px;
+        width: 50px;
+        background-color: #ffffff;
+        border-color: #eeff00;
+        border-style: solid;
+        border-radius: 50%;
+        ;
+        margin-bottom: -30px;
+        display: inline-block;
+        margin-left: -6%;
+    }
+    table.table2 {
+        font-family: Arial, sans-serif;
+        border-collapse: collapse;
+        width: 90%;
+        margin-left: 1%;
+        table-layout: fixed;
+        font-size: 12px;
+        margin-right: 1%;
+    }
+    table.table2 th,
+    table.table2 td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        width: 17%;
+    }
+    table.table2 th {
+        background-color: #f1f1f1;
+    }
+    table.table2 td {
+        background-color: #eee;
+        font-size: 10px;
+        text-align: left;
+        height: 15px;
+    }
+    table.table2 tr {
+        width: 8px;
+    }
+    table.table2 tr:nth-child(even) {
+        background-color: #f3f3f3;
+    }
+    .comp3 {
+        width: 94%;
+        padding-top: 0px;
+        height: 23%;
+        margin-top: -5px;
+        margin-left: 3%;
+        background-color: #b3ff001d;
+        border: 2px rgb(212, 255, 0);
+        border-style: solid;
+        border-radius: 7px;
+    }
+    .subtitle {
+        color: gray;
+        font-weight: normal;
+        font-size: 0.6rem;
+        margin-bottom: 25px;
+        margin-top: -5px;
+    }
+    .img2 {
+        width: 15px;
+        float: left;
+        margin-left: -35px;
+        margin-top: 2px;
+    }
+    .header h2 {
+        font-size: 10px;
+        margin-bottom: 0.5em;
+        margin-left: 55px;
+        font-size: 18px;
+    }
+    .column1 {
+        color: rgb(0, 1, 2);
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 1270px;
+        /* Should be removed. Only for demonstration */
+    }
+    .column2 {
+        float: left;
+        width: 67%;
+        padding: 10px;
+        height: 820px;
+        /* Should be removed. Only for demonstration */
+    }
+    .snooze {
+        background-color: rgb(255, 255, 255);
+        border: none;
+        padding: 12px 32px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        float: right;
+        margin-top: 7px;
+        padding-right: -10px;
+        color: #000000;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        margin-right: 10px;
+        border-radius: 3px;
+        border-color: #D0D0D0;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 16px;
+    }
+    .acknowledge {
+        background-color: #f00;
+        border: none;
+        padding: 12px 32px;
+        font-size: 12px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        float: right;
+        margin-top: 7px;
+        padding-right: -10px;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1px;
+        border-radius: 3px;
+        border-color: #e2e2e2;
+        border-style: solid;
+        border-width: 1px;
+        margin-top: 16px;
+        margin-right: 1rem;
+    }
+    .hr-2 {
+        display: block;
+        unicode-bidi: isolate;
+        margin-block-start: 0.5em;
+        margin-block-end: 1rem;
+        margin-inline-start: auto;
+        margin-inline-end: 5rem;
+        overflow: hidden;
+        border-style: inset;
+        border-width: 0.3px;
+        color: #e8e8e8;
+        border-top: 0.3px solid #e8e8e8;
+        border-bottom: 0.3px solid #e8e8e8;
+    }
+    .comp2 {
+        float: left;
+        width: 150%;
+        padding: 20px;
+        height: 50%;
+        border-style: solid;
+        border-color: rgba(152, 152, 152, 0.225);
+        border-width: 2px;
+        border-radius: 6px;
+    }
+    .text {
+        font-size: 12px;
+        line-height: 18px;
+        font-weight: normal;
+        margin-top: -15px;
+        padding-right: 20px;
+        flex: 1;
+        margin-left: 0.5rem
+    }
+    .text {
+        font-size: 11px;
+        line-height: 18px;
+        font-weight: normal;
+        margin-top: -15px;
+        padding-right: 5px;
+        flex: 1;
+        margin-left: 0.5rem
+    }
+    .redtext {
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: normal;
+        margin-top: -15px;
+        padding-right: 20px;
+        color: red;
+        flex: 1;
+    }
+    .button-table {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        padding-bottom: 5px;
+        padding-top: 5px;
+        border-bottom: 1px solid #ccc;
+    }
+    .button-cell {
+        padding: 1px;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+    }
+    .button-cell:hover {
+        background-color: #FFD800;
+    }
+    .button {
+        border: none;
+        color: white;
+        padding: 10px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 2px;
+        transition-duration: 0.2s;
+        cursor: pointer;
+    }
+    .button-text {
+        display: flex;
+        align-items: center;
+    }
+    .button-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .button-name {
+        font-size: 10px;
+        margin: 0;
+        margin-left: 26px;
+        color: #000;
+        margin-top: 3px;
+    }
+    .button-subheading {
+        font-size: 8px;
+        margin-left: 26px;
+        margin-top: -6px;
+        font-weight: normal;
+        margin-bottom: 9px;
+        color: #676767;
+        word-spacing: 1.6px;
+        letter-spacing: 0.4px;
+    }
+    .button-index {
+        font-size: 11px;
+        margin-right: 1px;
+        position: left;
+        position: absolute;
+        /* Added position absolute */
+        left: 30px;
+        /* Adjust as needed */
+        margin-top: 4px;
+    }
+    .button {
+        border: none;
+        color: white;
+        padding: 10px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 2px 2px;
+        transition-duration: 0.2s;
+        cursor: pointer;
+    }
+    .button1 {
+        width: 47%;
+        color: rgb(0, 0, 0);
+        border: 1px solid #c7ccce99;
+    }
+    .button1:hover {
+        background-color: #ffffff;
+        color: rgb(17, 0, 0);
+    }
+    .button2 {
+        width: 47%;
+        color: rgb(0, 0, 0);
+        border: 1px solid #c7ccce99;
+    }
+    .button2:hover {
+        background-color: #ffffff;
+        color: rgb(17, 0, 0);
+    }
+    .button3 {
+        height: 50px;
+        width: 100%;
+        color: rgb(0, 0, 0);
+        border: 1px solid #c7ccce99;
+    }
+    .button3:hover {
+        background-color: #f0f801;
+        color: rgb(17, 0, 0);
+    }
+    button.truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .button-text {
+        display: flex;
+        align-items: center;
+    }
+    .button-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .button-name {
+        font-size: 12px;
+        margin: 0;
+        margin-left: 20px;
+        color: #000;
+        margin-top: 3px;
+    }
+    .button-subheading {
+        font-size: 8.5px;
+        margin-left: 20px;
+        margin-top: 5px;
+        font-weight: normal;
+        margin-bottom: 9px;
+        color: #676767;
+        word-spacing: 1.6px;
+        letter-spacing: 0.4px;
+    }
+    .button-index {
+        font-size: 11px;
+        margin-right: 5px;
+        position: left;
+        position: absolute;
+        /* Added position absolute */
+        left: 25px;
+        /* Adjust as needed */
+        margin-top: 4px;
+    }
+    .button-time {
+        font-size: 3px;
+        color: #505050;
+        font-weight: normal;
+        margin-top: -16px;
+        margin-right: 2px;
+        font-size: 10px;
+        margin-left: 80px;
+        display: none;
+    }
+    .header h2 {
+        font-size: 10px;
+        margin-bottom: 0.5em;
+    }
 }

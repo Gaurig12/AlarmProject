@@ -54,4 +54,4 @@ exports.deleteAlarm = async(req, res) => {
     } catch (error) {
         res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json({ message: error.message });
     }
-};
+}

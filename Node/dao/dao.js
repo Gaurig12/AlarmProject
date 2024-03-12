@@ -7,7 +7,7 @@ const { ALARM_NOT_FOUND } = require('../constant/message');
 // DAO function to get all alarms
 exports.getAllAlarmsQuery = async() => {
     try {
-        const { rows } = await pool.query('SELECT * FROM "Alarmdetails"');
+        const { rows } = await pool.query('SELECT * FROM "Alarmdetails" Order by id ASC');
         return rows;
     } catch (error) {
         throw new Error(error.message);

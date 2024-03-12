@@ -1,51 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { AlarmService } from '../data.service';
-// import { Alarm } from '../app.model';
-
-// @Component({
-//   selector: 'app-read',
-//   templateUrl: './read.component.html',
-//   styleUrls: ['./read.component.css']
-// })
-
-// export class ReadComponent {
-//    alarms: Alarm[] = []; // Initialize with an empty array
-//  public databaseData: any;
-
-//   constructor(private AlarmService: AlarmService) {}
-
-//   ngOnInit(): void {
-//     this.AlarmService.getData().subscribe(data => {
-//       this.databaseData = data;
-//     });
-//   }
-//  selectedItem: any;
-//   showDetails(item: any): void {
-//     this.databaseData.forEach(data => {
-//       if (data !== item) {
-//         data.showDetails = false; // Hide details of other rows
-//       }
-//     });
-//     item.showDetails = !item.showDetails; // Toggle details for the clicked row
-//     this.selectedItem = item.showDetails ? item : null;
-// }
-//  editAlarm(alarm: Alarm): void {
-//     // Here you can implement logic to open an edit form or dialog for the selected alarm
-//     console.log('Editing alarm:', alarm);
-//   }
-
-//   deleteAlarm(id: number): void {
-//     if (confirm('Are you sure you want to delete this alarm?')) {
-//       this.AlarmService.deleteAlarm(id).subscribe(() => {
-//         // Remove the deleted alarm from the local array
-//         this.alarms = this.alarms.filter(a => a.id !== id);
-//         console.log('Alarm deleted successfully');
-//       }, error => {
-//         console.error('Error deleting alarm:', error);
-//         // Optionally, display an error message to the user
-//       });
-//     }
-// }}
 import { Component, OnInit  } from '@angular/core';
 import { Alarm } from '../app.model';
 import { AlarmService } from '../data.service';
@@ -69,7 +21,12 @@ export class AlarmComponent  implements OnInit {
   priorities: string[] = ['All', 'P1', 'P2', 'P3']; // List of priorities including "All"
 
   constructor(private AlarmService: AlarmService) { }
+showDetails: boolean = true; // Initialize to show details by default
+showEditView: boolean = false; // Initialize to hide edit form view by default
 
+toggleShowEditView(): void {
+  this.showEditView = !this.showEditView;
+}
   ngOnInit(): void {
     this.loadAlarms();
   }
@@ -101,12 +58,13 @@ export class AlarmComponent  implements OnInit {
     this.hoveredAlarm = null;
   }
 
-  toggleEditForm(): void {
+  toggleEditForm(alarm: any): void {
     this.showEditForm = !this.showEditForm;
   }
-submitEditForm(): void {
+
+  submitEditForm(): void {
     if (this.selectedAlarm) {
-      const selectedAlarmId = this.selectedAlarm.id; // Store the ID of the currently selected alarm
+      const scrollPosition = window.pageYOffset;
       this.AlarmService.updateAlarm(this.selectedAlarm).subscribe(
         (updatedAlarm: Alarm) => {
           const index = this.alarms.findIndex(a => a.id === updatedAlarm.id);
@@ -115,10 +73,12 @@ submitEditForm(): void {
           }
           console.log('Alarm updated successfully');
           alert('RECORD UPDATED');
-          this.selectedAlarm = updatedAlarm; // Update the selected alarm with the updated one
+          this.selectedAlarm = null;
           this.showEditForm = false;
-          // Find and set the selected alarm based on its ID
-          this.selectedAlarm = this.alarms.find(a => a.id === selectedAlarmId) || null;
+          if (this.alarms.length > 0) {
+            this.selectedAlarm = this.alarms[0];
+          }
+          window.scrollTo(0, scrollPosition); // Maintain scroll position
         },
         (error) => {
           console.error('Error updating alarm:', error);
@@ -126,7 +86,6 @@ submitEditForm(): void {
       );
     }
   }
-  
   // cancelEdit(): void {
   //   // Check if any changes were made to the selected alarm
   //   if (this.selectedAlarm && this.originalAlarm) {
@@ -188,13 +147,19 @@ deleteAlarm(id: number): void {
     }
   );
 }
-
+changesMade: boolean = false; 
+enableSaveButton(): void {
+    this.changesMade = true;
+  }
 
 
 toggleFilterOptions(): void {
     this.showFilterOptions = !this.showFilterOptions;
   }
 
+   resetForm() {
+        this.changesMade = false;
+    }
 
   // filterByPriority(): void {
   //   if (this.selectedPriority) {
